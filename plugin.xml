@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordoba-plugin-fox-ios" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>FOXiOS</name>
+    <license>MIT</license>
+    <engines>
+      <engine name="cordova-ios" version=">=4.0.0" />
+    </engines>
+    <platform name="ios">
+      <js-module name="FOXiOS" src="www/FOXiOS.js">
+          <clobbers target="cordova.plugins.FOXiOS" />
+      </js-module>
+
+      <config-file target="config.xml" parent="/*">
+        <feature name="FOXiOS">
+          <param name="ios-package" value="FOXiOS"/>
+          <param name="onload" value="true" />
+        </feature>
+        <plugin name="FOXiOS" value="FOXiOS"/>
+        <access origin="https://app-adforce.jp" />
+        <access origin="https://forceoperationx.com" />
+      </config-file>
+
+      <header-file src="src/ios/FOXiOS.h" />
+      <header-file src="src/ios/FOXSDK/FOX_iOS_SDK_3.3.0/AdManager.h" />
+      <header-file src="src/ios/FOXSDK/FOX_iOS_SDK_3.3.0/AnalyticsManager.h" />
+      <header-file src="src/ios/FOXSDK/FOX_iOS_SDK_3.3.0/Ltv.h" />
+      <header-file src="src/ios/FOXSDK/FOX_iOS_SDK_3.3.0/Notify.h" />
+      <source-file src="src/ios/FOXiOS.m" />
+      <source-file src="src/ios/FOXSDK/FOX_iOS_SDK_3.3.0/libAppAdForce.a" framework="true" />
+
+      <framework src="SafariServices.framework" />
+      <framework src="AdSupport.framework" />
+      <framework src="iAd.framework" />
+      <framework src="Security.framework" />
+      <framework src="StoreKit.framework" />
+      <framework src="SystemConfiguration.framework" />
+
+      <config-file target="*-Info.plist" parent="NSAppTransportSecurity">
+        <dict>
+          <key>NSExceptionDomains</key>
+          <dict>
+            <key>app-adforce.jp</key>
+            <dict>
+              <key>NSExceptionAllowsInsecureHTTPLoads</key>
+              <true/>
+              <key>NSIncludesSubdomains</key>
+              <true/>
+            </dict>
+            <key>forceoperationx.com</key>
+            <dict>
+              <key>NSExceptionAllowsInsecureHTTPLoads</key>
+              <true/>
+              <key>NSIncludesSubdomains</key>
+              <true/>
+            </dict>
+          </dict>
+        </dict>
+      </config-file>
+
+    </platform>
+</plugin>
