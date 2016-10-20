@@ -50,6 +50,38 @@ App Transport Security Settings
       NSIncludesSubdomains               Boolean YES
 ```
 
+アクセス解析を行う場合、さらに以下を追記。
+
+```
+- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
+{
+    self.viewController = [[MainViewController alloc] init];
+
+    [[AppAdForceManager sharedManager] cacheDefaultUserAgent];
+    [[AppAdForceManager sharedManager] sendConversionWithStartPage:@"default"];
+
+///// add /////
+    if ([application applicationState] == UIApplicationStateBackground) {
+        //バックグラウンド時の処理
+    } else {
+        //バックグラウンド時は起動計測が呼ばれないようにする
+        [ForceAnalyticsManager sendStartSession];
+    }
+///// add /////
+
+    return [super application:application didFinishLaunchingWithOptions:launchOptions];
+}
+
+```
+
+```
+#import "AnalyticsManager.h"
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    [ForceAnalyticsManager sendStartSession];
+}
+```
+
 ## Usage
 
 sendLTV(conversionID)
