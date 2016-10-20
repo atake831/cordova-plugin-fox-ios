@@ -25,6 +25,7 @@
     } else {
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"conversionID was null"];
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    }
 }
 
 - (void)sendLTVPurchase:(CDVInvokedUrlCommand *)command
