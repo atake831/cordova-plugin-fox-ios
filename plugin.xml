@@ -26,7 +26,9 @@
       <header-file src="src/ios/FOXSDK/FOX_iOS_SDK_3.3.0/Ltv.h" />
       <header-file src="src/ios/FOXSDK/FOX_iOS_SDK_3.3.0/Notify.h" />
       <source-file src="src/ios/FOXiOS.m" />
-      <source-file src="src/ios/FOXSDK/FOX_iOS_SDK_3.3.0/libAppAdForce.a" framework="true" />
+      <!-- <source-file src="src/ios/FOXSDK/FOX_iOS_SDK_3.3.0/libAppAdForce.a" framework="true" /> -->
+
+      <framework custom="true" src="src/ios/FOXSDK/FOX_iOS_SDK_3.3.0/libAppAdForce.a" />
 
       <framework src="SafariServices.framework" />
       <framework src="AdSupport.framework" />
