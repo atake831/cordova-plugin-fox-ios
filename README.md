@@ -86,9 +86,7 @@ App Transport Security Settings
 
 sendLTV(conversionID)
 
-sendLTVPurchase(conversionID, price, currencty)
-
-
+sendLTVPurchase(conversionID, price, currencty, itemName)
 
 ## libAppAdForceがnot foundでlinkerエラーになる場合
 一度Link Binary With Librariesから削除して、platforms/ios/cabakuru/Plugins/cordova-plugin-fox-ios/libAppAdForce.aを追加する。
