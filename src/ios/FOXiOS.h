@@ -3,6 +3,7 @@
 #import "AppDelegate.h"
 #import "AdManager.h"
 #import "Ltv.h"
+#import "AnalyticsManager.h"
 
 @interface FOXiOS : CDVPlugin 
 - (void)sendLTV:(CDVInvokedUrlCommand *)command;
