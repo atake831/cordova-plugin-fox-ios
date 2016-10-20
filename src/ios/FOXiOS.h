@@ -2,6 +2,7 @@
 #import <Cordova/CDV.h>
 #import "AppDelegate.h"
 #import "AdManager.h"
+#import "Ltv.h"
 
 @interface FOXiOS : CDVPlugin 
 - (void)sendLTV:(CDVInvokedUrlCommand *)command;

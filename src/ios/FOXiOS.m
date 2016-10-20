@@ -1,7 +1,6 @@
 #import "FOXiOS.h"
 
 @interface FOXiOS ()
-@property (strong, nonatomic) NSString* loginCallbackId;
 @end
 
 @implementation FOXiOS {
