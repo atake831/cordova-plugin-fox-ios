@@ -37,6 +37,19 @@ add>>    [[AppAdForceManager sharedManager] sendConversionWithStartPage:@"defaul
 
 URLSchemeを追加。
 
+info.plistに以下を追加
+
+```
+App Transport Security Settings
+  ▽Exception Domains
+    ▽app-adforce.jp
+      NSExceptionAllowsInsecureHTTPLoads Boolean YES
+      NSIncludesSubdomains               Boolean YES
+    ▽forceoperationx.com
+      NSExceptionAllowsInsecureHTTPLoads Boolean YES
+      NSIncludesSubdomains               Boolean YES
+```
+
 ## Usage
 
 sendLTV(conversionID)
