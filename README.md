@@ -56,3 +56,8 @@ sendLTV(conversionID)
 
 sendLTVPurchase(conversionID, price, currencty)
 
+
+
+## libAppAdForceがnot foundでlinkerエラーになる場合
+一度Link Binary With Librariesから削除して、platforms/ios/cabakuru/Plugins/cordova-plugin-fox-ios/libAppAdForce.aを追加する。
+
